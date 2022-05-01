@@ -17,3 +17,33 @@
   /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
   user-select: none;
 }
+
+.ce-block__content,
+.ce-toolbar__content {
+  max-width: 1024px;
+}
+
+.simple-image {
+  padding: .5rem 0;
+}
+
+.simple-image img {
+  max-width: 100%;
+}
+
+.simple-image.withBorder img {
+  border: 1px solid #181813;
+}
+
+.simple-image [contenteditable] {
+  outline: none;
+}
+
+.simple-image input {
+  font-weight: 600;
+  padding: .25rem .5rem;
+}
+
+.simple-image fieldset {
+  border: none !important;
+}

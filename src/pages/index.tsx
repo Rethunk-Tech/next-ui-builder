@@ -1,23 +1,41 @@
-import { HomeRounded } from '@mui/icons-material'
-import { Container, Typography } from '@mui/material'
+// import Page from 'components/Page'
 import type { NextPage } from 'next'
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import Link from 'next/link'
+
+const Editor = dynamic(
+  () => import('components/Editor'),
+  { ssr: false }
+)
 
 const Home: NextPage = (): JSX.Element => {
   return <>
     <Head>
-      <title>Create Next App</title>
+      <title>Next UI Builder</title>
     </Head>
 
-    <Container maxWidth="lg" sx={{ my: 12, textAlign: 'center' }}>
-      <Typography component="h1" variant="h1" sx={{ mb: 6 }}>
-          Welcome to <Link href="https://nextjs.org">Next.js!</Link>
-      </Typography>
-
-      <HomeRounded fontSize="inherit" sx={{ fontSize: '14rem' }} />
-    </Container>
+    {/* <Page align="middle" textAlign="left"> */}
+    <Editor />
+    {/* </Page> */}
+    {/* <Footer /> */}
   </>
 }
+
+// function Footer(): JSX.Element {
+//   return <Typography
+//     align="center"
+//     variant="body2"
+//     sx={{
+//       py:  4,
+//       'a': { textDecoration: 'none' }
+//     }}
+//   >
+//     <Link
+//       href="https://github.com/Rethunk-Tech/next-ui-builder"
+//     >
+//       Source on GitHub
+//     </Link>
+//   </Typography>
+// }
 
 export default Home
